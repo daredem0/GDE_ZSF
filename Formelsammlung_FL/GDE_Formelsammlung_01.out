@@ -1,0 +1,76 @@
+\BOOKMARK [1][]{section.1}{1 Grundlagen}{}% 1
+\BOOKMARK [2][]{subsection.2}{1.1 Misc}{section.1}% 2
+\BOOKMARK [3][]{subsubsection.3}{1.1.1 Atome}{subsection.2}% 3
+\BOOKMARK [2][]{subsection.4}{1.2 Das elektrische Feld}{section.1}% 4
+\BOOKMARK [3][]{subsubsection.5}{1.2.1 Coulombsches Gesetz}{subsection.4}% 5
+\BOOKMARK [3][]{subsubsection.7}{1.2.2 Feldst\344rke und Ladung}{subsection.4}% 6
+\BOOKMARK [3][]{subsubsection.18}{1.2.3 Potentielle Energie einer Probeladung q im elektrischen Feld}{subsection.4}% 7
+\BOOKMARK [3][]{subsubsection.21}{1.2.4 Wegarbeit}{subsection.4}% 8
+\BOOKMARK [2][]{subsection.23}{1.3 Spannung und Potential}{section.1}% 9
+\BOOKMARK [2][]{subsection.27}{1.4 Bewegung von Ladungstr\344gern im Vakuum}{section.1}% 10
+\BOOKMARK [2][]{subsection.30}{1.5 Bewegung von Ladungstr\344gern in Materie}{section.1}% 11
+\BOOKMARK [2][]{subsection.36}{1.6 Energie und Leistung}{section.1}% 12
+\BOOKMARK [3][]{subsubsection.42}{1.6.1 Widerst\344nde}{subsection.36}% 13
+\BOOKMARK [1][]{section.49}{2 Gleichstromkreise}{}% 14
+\BOOKMARK [2][]{subsection.50}{2.1 Kirchhoffsche Gesetze}{section.49}% 15
+\BOOKMARK [3][]{subsubsection.52}{2.1.1 Kirchhoffsche Gesetze}{subsection.50}% 16
+\BOOKMARK [2][]{subsection.54}{2.2 Einfache Regeln f\374r Widerstandsnetzwerke}{section.49}% 17
+\BOOKMARK [3][]{subsubsection.61}{2.2.1 Spannungsteiler}{subsection.54}% 18
+\BOOKMARK [2][]{subsection.64}{2.3 Br\374ckenschaltungen}{section.49}% 19
+\BOOKMARK [3][]{subsubsection.65}{2.3.1 Br\374ckenschaltung}{subsection.64}% 20
+\BOOKMARK [3][]{subsubsection.67}{2.3.2 Abgeglichene Br\374ckenschaltung}{subsection.64}% 21
+\BOOKMARK [1][]{section.70}{3 Quellen}{}% 22
+\BOOKMARK [2][]{subsection.78}{3.1 Ideale Quellen}{section.70}% 23
+\BOOKMARK [3][]{subsubsection.79}{3.1.1 Ideale Stromquelle}{subsection.78}% 24
+\BOOKMARK [3][]{subsubsection.83}{3.1.2 Ideale Spannnungsquelle}{subsection.78}% 25
+\BOOKMARK [2][]{subsection.87}{3.2 Reale Quellen}{section.70}% 26
+\BOOKMARK [3][]{subsubsection.90}{3.2.1 Grenzf\344lle}{subsection.87}% 27
+\BOOKMARK [2][]{subsection.94}{3.3 Quellenwandlung}{section.70}% 28
+\BOOKMARK [1][]{section.97}{4 Systematische Verfahren zur Netzwerkanalyse}{}% 29
+\BOOKMARK [2][]{subsection.98}{4.1 Grundbegriffe}{section.97}% 30
+\BOOKMARK [2][]{subsection.99}{4.2 Maschenstromanalyse}{section.97}% 31
+\BOOKMARK [2][]{subsection.112}{4.3 Knotenspannungsanalyse}{section.97}% 32
+\BOOKMARK [2][]{subsection.117}{4.4 Superpositionsprinzip nach Helmholtz}{section.97}% 33
+\BOOKMARK [1][]{section.119}{5 Das statische elektrische Feld}{}% 34
+\BOOKMARK [2][]{subsection.120}{5.1 Elektrischer Fluss}{section.119}% 35
+\BOOKMARK [2][]{subsection.124}{5.2 Elektrische Dipole}{section.119}% 36
+\BOOKMARK [2][]{subsection.126}{5.3 Kapazit\344ten}{section.119}% 37
+\BOOKMARK [3][]{subsubsection.129}{5.3.1 Plattenkondensatoren}{subsection.126}% 38
+\BOOKMARK [3][]{subsubsection.136}{5.3.2 Kugelkondensator}{subsection.126}% 39
+\BOOKMARK [3][]{subsubsection.138}{5.3.3 Zylinderkondensator}{subsection.126}% 40
+\BOOKMARK [3][]{subsubsection.142}{5.3.4 Kapazitiver Schaltungen}{subsection.126}% 41
+\BOOKMARK [2][]{subsection.149}{5.4 Ladevorgang}{section.119}% 42
+\BOOKMARK [2][]{subsection.158}{5.5 Entladevorgang}{section.119}% 43
+\BOOKMARK [1][]{section.161}{6 Das statische magnetische Feld}{}% 44
+\BOOKMARK [2][]{subsection.162}{6.1 Lorentzkraft und Flussdichte}{section.161}% 45
+\BOOKMARK [2][]{subsection.166}{6.2 Magnetischer Fluss, Feldst\344rke und Durchflutung}{section.161}% 46
+\BOOKMARK [2][]{subsection.170}{6.3 Stromdurchflossene Leiter}{section.161}% 47
+\BOOKMARK [3][]{subsubsection.172}{6.3.1 Leiterschleife}{subsection.170}% 48
+\BOOKMARK [2][]{subsection.175}{6.4 Magnetische Reluktanz}{section.161}% 49
+\BOOKMARK [2][]{subsection.180}{6.5 Luftspalt}{section.161}% 50
+\BOOKMARK [1][]{section.186}{7 Zeitlich ver\344nderliche Felder}{}% 51
+\BOOKMARK [2][]{subsection.187}{7.1 Allgemeines Induktionsgesetz}{section.186}% 52
+\BOOKMARK [2][]{subsection.191}{7.2 Induktivit\344t einer Spule}{section.186}% 53
+\BOOKMARK [3][]{subsubsection.196}{7.2.1 Ringspule}{subsection.191}% 54
+\BOOKMARK [3][]{subsubsection.199}{7.2.2 Hubmagnet}{subsection.191}% 55
+\BOOKMARK [2][]{subsection.202}{7.3 Magnetische Energie}{section.186}% 56
+\BOOKMARK [2][]{subsection.205}{7.4 Schaltungen von Induktivit\344ten}{section.186}% 57
+\BOOKMARK [2][]{subsection.211}{7.5 Einschaltvorgang}{section.186}% 58
+\BOOKMARK [2][]{subsection.215}{7.6 Abschaltvorgang}{section.186}% 59
+\BOOKMARK [1][]{section.218}{8 Anh\344nge}{}% 60
+\BOOKMARK [2][]{subsection.219}{8.1 Abk\374rzungen/Formelzeichen}{section.218}% 61
+\BOOKMARK [2][]{subsection.221}{8.2 Konstanten}{section.218}% 62
+\BOOKMARK [3][]{subsubsection.223}{8.2.1 Spezifische Widerst\344nde [cm ]}{subsection.221}% 63
+\BOOKMARK [3][]{subsubsection.224}{8.2.2 Temperaturkoeffizienten \040ohmscher Widerst\344nde bei 20 C in [1 C ]}{subsection.221}% 64
+\BOOKMARK [2][]{subsection.225}{8.3 SI-Basiseinheiten}{section.218}% 65
+\BOOKMARK [2][]{subsection.226}{8.4 Vorsatzzeichen}{section.218}% 66
+\BOOKMARK [2][]{subsection.227}{8.5 Kurzzusammenfassung}{section.218}% 67
+\BOOKMARK [3][]{subsubsection.228}{8.5.1 Elektrostatik}{subsection.227}% 68
+\BOOKMARK [3][]{subsubsection.230}{8.5.2 Kondensator}{subsection.227}% 69
+\BOOKMARK [3][]{subsubsection.232}{8.5.3 Magnet 1}{subsection.227}% 70
+\BOOKMARK [3][]{subsubsection.234}{8.5.4 Magnet 2}{subsection.227}% 71
+\BOOKMARK [3][]{subsubsection.236}{8.5.5 Spule}{subsection.227}% 72
+\BOOKMARK [3][]{subsubsection.238}{8.5.6 Komplexe Rechnung}{subsection.227}% 73
+\BOOKMARK [3][]{subsubsection.240}{8.5.7 Zeiger}{subsection.227}% 74
+\BOOKMARK [3][]{subsubsection.242}{8.5.8 \334bertrager}{subsection.227}% 75
+\BOOKMARK [2][]{subsection.244}{8.6 Nachwort}{section.218}% 76

@@ -1,0 +1,395 @@
+%%%%%Präambel%%%%%
+
+\documentclass[12pt,a4paper]{article}%Schriftgröße, Papierformat einstellen
+%\documentclass{scrbook}
+\usepackage[top=30mm,bottom=30mm]{geometry}
+\usepackage{lipsum}
+%Pakete laden zur deutschen Rechtschreibung und für Umlaute
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc} %für Windows, Linux
+%\usepackage[applemac]{inputenc} %für Mac
+%\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{cancel}
+\usepackage{titlesec}
+\usepackage{cite}
+\usepackage{filecontents}
+\usepackage{harvard}
+\let\harvardleftorig\harvardleft
+%\usepackage[round]{natbib}
+%\usepackage{hyperref}
+
+%Inhaltsverzeichnis mit Links erstellen
+\usepackage[colorlinks,
+pdfpagelabels,
+pdfstartview = FitH,
+bookmarksopen = true,
+bookmarksnumbered = true,
+linkcolor = black,
+plainpages = false,
+hypertexnames = false,
+citecolor = black] {hyperref}
+
+%Pakete laden zu mathematischen Symbolen etc.
+\usepackage{calc} 
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\automark[chapter]{section}
+\ofoot{\pagemark}
+\ifoot{Florian Leuze}
+\chead{\headmark}
+\setfootsepline{1pt}
+\setheadsepline{1pt}
+%\setheadsepline[\textwidth+20pt]{0.5pt}
+
+% Umgebungen für Definitionen, Sätze, usw.
+\newtheorem{satz}{Satz}[section]
+\newtheorem{definition}[satz]{Definition}     
+\newtheorem{lemma}[satz]{Lemma}	
+% Es werden Sätze, Definitionen etc innerhalb einer Section mit
+% 1.1, 1.2 etc durchnummeriert, ebenso die Gleichungen mit (1.1), (1.2) ..                  
+\numberwithin{equation}{section}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%neue Befehle definieren
+\newcommand{\R}{\mathbb{R}} %zB \R als Abkürzung für das Symbol der reellen Zahlen
+\newcommand{\subsubsubsection}{\paragraph}
+\newcommand\citevgl
+{\def\harvardleft{(vgl.\ \global\let\harvardleft\harvardleftorig}%
+ \cite
+}
+\newcommand\citeVgl
+{\def\harvardleft{(Vgl.\ \global\let\harvardleft\harvardleftorig}%
+ \cite
+}
+
+%Makros
+%Makro Color
+%#1 Text
+\def\colBord#1{\begingroup\color{Fuchsia}{#1}\endgroup}
+\def\colRed#1{\begingroup\color{Red}{#1}\endgroup}
+\def\colGreen#1{\begingroup\color{LimeGreen}{#1}\endgroup}
+\def\colBlue#1{\begingroup\color{NavyBlue}{#1}\endgroup}
+
+\def\usGreen#1#2{\underset{\colGreen{#1}}{#2}}
+\def\usBord#1#2{\underset{\colBord{#1}}{#2}}
+
+% Auf der Seite http://detexify.kirelabs.org/classify.html können Sie mathematische Symbole, Pfeile usw per Maus eingeben und bekommen den Latex-Befehl dafür angezeigt.
+% detexify gibt es auch als App...
+
+
+
+%jetzt beginnt das eigentliche Dokument
+\begin{document}
+\bibliographystyle{agsm}
+
+\author{}
+\title{\underline{HM1-2 Zusammenfassung}}
+\date{}
+
+\maketitle % erzeugt den Kopf
+\newpage
+\section{\underline{Inhalt}}
+\tableofcontents
+
+\subsection{Versionierung}
+\begin{tabular}{|p{2cm}|p{1cm}|p{1.5cm}|p{8.5cm}|}\hline
+Datum & Vers. & Kürzel & Änderung \\ \hline
+19.04.2018 & 0.1 & FL & Erzeugung Dokument; Erzeugung Inhaltsverzeichnis; Erzeugung Versionierung;
+Erzeugung 2.1 - 2.7.4 \\ \hline
+19.04.2018 & 0.2 & FL & Korrekturen 2.6.1 - 2.6.9 u. 2.7.1 - 2.7.2 Titel\\ \hline
+20.04.2018 & 0.2.1 & FL & Erzeugung 2.7.1.1 - 2.7.1.4; Korrektur Riemannsche Untersumme; Erzeugung Literaturverzeichnis \\ \hline
+\end{tabular}
+
+\newpage
+ 
+\section{\underline{Integralberechnung}}
+\subsection{Unbestimmtes Integral}
+\begin{equation}
+\int f(x) dx = F(x) + C = [F(x)]\qquad, C\in\R \label{eq:def_noBorder}
+\end{equation}
+
+\subsection{Bestimmtes Integral}
+\begin{equation}
+\int_a^b f(x) dx = F(b) - F(a) \label{eq:def_border}
+\end{equation}
+
+\subsection{Partielle Integration}
+Entspricht der "Produktregel" der Differentialrechnung.
+\begin{equation}
+\int_{\colBord{a}}^{\colBord{b}} f'(x) g(x) dx = f(x) g(x) \colBord{\Big|_a^b} - \int_{\colBord{a}}^{\colBord{b}} f(x) g'(x) dx \label{eq:rule_partInt}
+\end{equation}
+Bietet sich zum Beispiel bei Produkten aus x-Potenz mit e-Funktionen, log, sin oder cos an.
+
+\subsection{Integration durch Substitution}
+Entspricht der "Kettenregel" der Differentialrechnung.
+\begin{equation}
+\int_{\colBord{a}}^{\colBord{b}} f(g(x))g'(x) dx = \int_{\colBord{g(a)}}^{\colBord{g(b)}} f(y) dy \qquad (setze \quad y = g(x) \label{eq:rule_subs}
+\end{equation}
+
+\subsubsection{Spezialfall}
+\begin{equation}
+\int \frac{f'(x)}{f(x)} dx = ln(|f(x)|) + C \qquad ,C\in\R \label{eq:rule_spec}
+\end{equation}
+
+\newpage
+
+\subsection{Gerade/Ungerade Funktionen}
+\begin{align}
+\int_{-a}^a f(x) = 
+\begin{cases}
+2 \int_0^a f(x) dx &,\; f\; gerade\\
+0 &,\; f\; ungerade\\
+\end{cases} \label{eq:evenodd}
+\end{align}
+\begin{align*}
+\text{f gerade, falls }f(-x) &= f(x) \qquad &(z.B.: cos(x), x^2)\\
+\text{f ungerade, falls }f(-x) &= -f(x) \qquad &(z.B.: sin(x), x^3)\\
+\end{align*}
+
+\subsection{Beispiele}
+\subsubsection{$\int_1^2 \frac{ln(t)}{t} dt$}
+\begin{align}
+\colBord{s }\; &\colBord{= ln(t) \Rightarrow \frac{ds}{dt} \Rightarrow ds} \;\colBord{=} \colBord{\frac{1}{t}dt} \nonumber\\
+\colBord{Grenzen: t } &\colBord{=} \;\colBord{1, t=2 \rightarrow s = ln(1), s = ln(2)} \nonumber \\
+\int_1^2 \frac{ln(t)}{t} dt &= \int_1^2 ln(t) \frac{1}{t} dt = \int_{ln(1)}^{ln(2)} s ds 
+= \frac{1}{2} s^2 \colBord{\Big|_{s = ln(1) = 0}^{ln(2)}} = \frac{1}{2}(ln(2))^2 
+\end{align}
+Bauart des Integrals: $\int h(t)h'(t)dt$
+
+\subsubsection{$\int_0^{\frac{1}{2}} tan(t) dt$}
+\begin{align}
+\colBord{s = cos(t) \rightarrow \frac{ds}{dt}} \; &\colBord{=} \; \colBord{-sin(t) \rightarrow ds = -sin(t) dt} \nonumber \\
+\colBord{Grenzen: t = 0, t } \; &\colBord{=} \; \colBord{1 \rightarrow s = cos(0), s = cos(\frac{1}{2}} \nonumber \\
+\int_0^{\frac{1}{2}} tan(t) dt = \int_{0}{\frac{1}{2}} \frac{sin(t)}{cos(t)} dt &= \int_0 ^{\frac{1}{2}} \frac{1}{cos(t)} sin(t) dt 
+= - \int_{cos(0)}^{\frac{1}{2}} \frac{1}{s} ds \nonumber \\
+= -ln(s)\colBord{\Big|_{s = cos(0)}^{cos(\frac{1}{2})}} &= -ln(cos(\frac{1}{2})) + ln(\usGreen{=1}{cos(0)})
+\end{align}
+Bauart des Integrals: $\int \frac{1}{h(t)}h'(t)dt$
+
+\subsubsection{$\int 4xe^{-x} dx$}
+\begin{align}
+\int 4xe^{-x} dx &= 4 \int \usGreen{u}{x} \usGreen{v'}{e^{-x}} dx 
+\overset{\colGreen{p.I.}}{=} \usGreen{u}{x} \usGreen{v}{-e^{-x}} 
+-4\int \usGreen{u'}{1} \usGreen{v}{-e^{-x}} dx \nonumber\\
+&= -4xe^{-x} -4e^{-x} + C 
+\qquad C\in\R \label{eq:ex1}
+\end{align}
+
+\subsubsection{$\int_0^{\pi}(x+3)cos(2x) dx$)}
+\begin{align}
+\int_0^{\pi} \usGreen{u}{(x+3)} \usGreen{v'}{cos(2x)}dx 
+&\overset{\colGreen{p.I.}}{=} \underbrace{\usGreen{u}{(x+3)} * \frac{1}{2}\usGreen{v}{sin(2x)}\Big|_0^{\pi}}_{\colBord{=0}}
+- \frac{1}{2} \int_0^{\pi} \usGreen{u'}{1} * \usGreen{v}{sin(2x)} \nonumber \\
+&\;=\frac{1}{4}\; cos(2x)\Big|_0^{\pi} = 0 \label{eq:ex2}
+\end{align}
+
+\subsubsection{$\int cos^2(x)dx$}
+\begin{align}
+\int cos^2(x)\;dx &= \int \usGreen{u}{cos(x)} * \usGreen{v'}{cos(x)}\;dx \overset{\colGreen{p.I.}}{=}
+\usGreen{u}{cos(x)} * \usGreen{v}{sin(x)} - \int \usGreen{u'}{(-sin(x))}*\usGreen{v}{sin(x)}\;dx \nonumber\\
+&=cos(x)sin(x) + \int \underbrace{sin^2(x)}_{\colBord{= 1-cos^2(x)}}dx = cos(x)sin(x) + \int 1dx - \int cos^2(x)\; dx \nonumber\\
+&\Rightarrow 2\int cos^2(x)\;dx = cos(x)sin(x) + x + \tilde{c} \qquad ,\tilde{c}\in\R\nonumber\\
+&\Rightarrow \int cos^2(x)\;dx = \frac{cos(x)sin(x)+x}{2}+C \qquad, C\in\R \label{eq:ex3}
+\end{align}
+
+\subsubsection{$\int_0^1 x arctan(x) dx$}
+\begin{align}
+\int_0^1 \usGreen{u'}{x} \usGreen{v}{arctan(x)} dx &\overset{\colGreen{p.I.}}{=} 
+\frac{1}{2} * \usGreen{u}{x^2} \usGreen{v}{arctan(x)} \Big|_0^1 - 
+\int_0^1 \usGreen{u}{\frac{1}{2} x^2} \usGreen{v'}{\frac{1}{1+x^2}}dx \nonumber\\
+&\;= \frac{\pi}{8} - \frac{1}{2} \int_0^1 \frac{1}{1+x^2} dx 
+= \frac{\pi}{8} - \frac{1}{2} \int_0^1 1 dx + \int_0^1 \frac{1}{1+x^2} dx \nonumber\\
+&\;= \frac{\pi}{8} - \frac{1}{2}* (x\Big|_0^1) + \frac{1}{2} actan(x)\Big|_0^1 
+= \frac{\pi}{8} - \frac{1}{2} * \frac{\pi}{8} \nonumber\\
+&\;= \frac{\pi}{4} - \frac{1}{2} \label{eq:ex4}
+\end{align}
+
+\subsubsection{$\int \frac{3x^2+2}{x^3+2x+1}dx$}
+\begin{align}
+\int \frac{3x^2+2}{x^3+2x+1}dx = ln(|x^2+2x-1|) + C \qquad ,C\in\R\label{eq:ex5}
+\end{align}
+Da das Integral über einen Ausdruck der Form $\frac{f'(x)}{f(x)}$ gebildet wird gilt \eqref{eq:rule_spec}. Alternativ Substitution:
+\begin{align*}
+y = x^3+2x-1 \Rightarrow dy = (3x^2+2) dx \Rightarrow \int \frac{1}{y}dy
+\end{align*}
+
+\subsubsection{$\int cos(x) e^{3sin(x)}dx$}
+\begin{align}
+\colBord{y = 3sin(x) \Rightarrow dy}\; &\;\;\colBord{=} \; \colBord{3cos(x) dx} \nonumber\\
+\int cos(x) e^{3sin(x)}dx &\overset{\colGreen{subs.}}{=} \frac{1}{3} \int e^y dy \nonumber\\
+&\;= \frac{1}{3} e^y + C \usGreen{R.s.}{=} \frac{1}{3}e^{3sin(x)} + C \qquad , \; C\in\R
+\end{align}
+
+\subsubsection{$\int \frac{1}{(2+x) \sqrt{1+x}}dx$}
+\begin{align}
+\colBord{x = 2sin(y) \Rightarrow dx} &\;\;\colBord{=} \colBord{2cos(y) dy} \nonumber\\
+\int \frac{1}{(2+x) \sqrt{1+x}}dx &\usGreen{subs.}{=} 
+\int \frac{1}{(y^2 + 1) \colRed{\cancel{y}}} 2\colRed{\cancel{y}} dy 
+= 2\int \frac{1}{1+y^2}\;dy \nonumber\\
+&\;= 2*arctan(y) + C = 2* arctan(\sqrt{1+x} + C ,\;C\in\R
+\end{align}
+
+\subsubsection{$\int \sqrt{4+x^2} \; dx$}
+\begin{align}
+\colBord{x = 2 sin(y) \Rightarrow dx} &\;\;\colBord{=} \colBord{\;2cos(y)dy} \nonumber\\
+\int \sqrt{4+x^2} \; dx &\overset{\colGreen{subs.}}{=}
+\int \sqrt{4-4sin^2(y)} * 2cos(y) \; dy \nonumber\\
+&\;= \int \sqrt{4cos^2(y)} 2cos(y) \; dy = 4\int cos^2(y) \; dy \nonumber\\
+&\overset{\colGreen{p.I.}}{=} 4*(\usGreen{u}{cos(y)} * \usGreen{v}{sin(y)} - \int \usGreen{u'}{(-sin(y))}*\usGreen{v}{sin(y)}\;dy) \nonumber\\
+&\;\Rightarrow 4\int cos^2(y) dy = cos(y)sin(y) + \int 1dy - \int cos^2(y)\; dy \nonumber\\
+&\;\Rightarrow 5\int cos^2(y)\;dy = cos(y)sin(y) + y + \tilde{c} \qquad ,\tilde{c}\in\R\nonumber\\
+&\;\Rightarrow \int cos^2(y)\;dy = \frac{cos(y)sin(y)+x}{5}+C \qquad, C\in\R
+\end{align}
+
+\subsubsection{$\int_{-3}^3 1+e^{x^2} *(sin(x)^3\;dx$}
+\begin{align}
+\int_{-3}^3 1+e^{x^2} *(sin(x)^3\;dx &= \underbrace{\int_{-3}^3 1 dx}_{\colBord{= 6}} 
++ \underbrace{\int_{-3}^{3} e^{x^2} * (sin(x))^2 dx}_{\colBord{ = 0 \text{ da der Integrand 
+eine ungerade Funktion ist}}} \nonumber\\
+&= 6
+\end{align}
+Untersucht man den Integranden, stellt man seine Ungeradheit leicht fest.
+\begin{align*}
+sin(x) &\Rightarrow ungerade \\
+sin^2(x) &\Rightarrow gerade \\
+sin^3(x) &\Rightarrow ungerade
+\end{align*} 
+Funktionen verhalten sich im Bezug auf Ungeradheit zur Multiplikation ähnlich wie Vorzeichen.
+($(-)*(-) = (+);\; (-) * (+) = (-)$)
+Untersucht man weiterhin die e-Funktion stellt man fest, dass sie gerade ist:
+\begin{align*}
+f(x) = e^{x^2} = e^{(-x)^2} = f(-x) \Rightarrow gerade \; Funktion
+\end{align*}
+Da also eine gerade mit einer ungeraden Funktion multipliziert wird ist das Ergebnis wiederrum ungerade.
+
+\subsection{Allgemeines zur Integration}
+\subsubsection{Riemann Integrierbarkeit}
+$f:[a,b] \rightarrow \R$ stetig bzw. monoton \newline
+$\Rightarrow$ f ist R-integrierbar.
+
+\subsubsubsection{Riemannsches Unterintegral}
+\begin{equation}
+\int_{a}^{\bar{b}} f(x) dx = \sup\{U_f(Z): \; \text{Z Zerlegung von }[a,b]\}
+\end{equation}
+
+
+\subsubsubsection{Riemannsches Oberintegral}
+\begin{equation}
+\int_{\bar{a}}^{b} f(x) dx = \inf\{O_f(Z): \; \text{Z Zerlegung von }[a,b]\}
+\end{equation}
+
+$\rightarrow \text{f heißt Riemann-integrierbar über }[a,b]$, falls
+\begin{equation}
+\int_{\bar{a}}^{b} f(x) dx = \int_a^{\bar{b}} f(x) dx
+\end{equation}
+\newline
+In diesem Fall heißt der Wert das Riemannn-Integral und wird mit $\int_a^b f(x)dx$ bezeichnet.
+
+\subsubsubsection{Eigenschaften}
+\begin{description}
+\item[a)]
+Falls $a<b$ setzen wir:
+\begin{align}
+\int_b^a f(x) dx &= -\int_a^bf(x)dx \nonumber \\
+\int_a^a f(x) dx &= 0
+\end{align}
+\item[b)]
+f, g seien R-integrierbar, $\lambda , \mu \in \R \rightarrow \lambda f + \mu g$ ist R-integrierbar (Vektorraumeigenschaft).
+\begin{equation}
+\int_a^b \lambda f + \mu g)(x)dx = \lambda \int_a^b f(x) dx + \mu \int_a^b g(x) dx
+\end{equation}
+\item[c)]
+$a<C<b$, f ist R-integrierbar.
+\begin{equation}
+\int_a^b f(x) dx = \int_a^C f(x) dx + \int_C^b f(x) dx
+\end{equation}
+\item[d)]
+\begin{align}
+f(x) \ge 0 &\Rightarrow \int_a^b f(x) dx \ge 0 \nonumber \\
+f(x) \ge g(x) &\Rightarrow \int_a^b f(x) dx \ge \int_a^b g(x)dx
+\end{align}
+\item[e)]
+\begin{equation}
+\text{Sind $f$ und $g$ R-integrierbar ist auch $f*g$ R-integrierbar.}
+\end{equation}
+\item[f)]
+\begin{align}
+g(x) \ge C > 0 \Rightarrow \frac{f}{g} \text{ ist R-integrierbar.}
+\end{align}
+\item[g)]
+\begin{equation}
+\text{Ist $f$ R-integrierbar dann ist auch } |f| \text{ R-integrierbar.}
+\end{equation} 
+\item[h)]
+\begin{equation}
+(b-a) \inf_{x\in[a,b]}{f(x)} \le \int_a^b f(x) dx \le (b-a) \sup_{x\in [a,b]}{f(x)}
+\end{equation}
+\end{description}
+
+\subsubsubsection{Kriterien zur Riemann-Integrierbarkeit}
+
+\begin{description}
+\item[a)]
+$f$ monoton $\Rightarrow f$ R-integrierbar.
+\item[b)]
+$f$ stetig $\Rightarrow f$ R-integrierbar
+\newline
+\glqq Satz: Jede stetige Funktion $f:k \rightarrow \R$ auf einer kompakten Menge k, d.h. für $k<\R^d$ abgeschlossen und beschränkt, ist dort gleichmäßig stetig und damit R-integrierbar.\grqq \cite{HM12}
+Beispiel für k: $k:[a,b]$
+\item[c)]
+Kriterium: Jede Funktion deren Unstetigkeitsstellen eine Nullmenge bilden (z.B. abzählbare Mengen) sind R-integrierbar.
+\glqq Satz: Eine Funktion $f:[a,b]\rightarrow \R$ ist genau dann R-integrierbar, wenn $f$ beschränkt ist und die Menge der Unstetigkeitsstellen eine Nullmenge ist. \grqq \cite{HM12}
+Die Konsequenz daraus lautet, dass jede stetige Funktion mit endlich vielen Sprungstellen R-integrierbar ist. \citeVgl{HM12}
+\item[d)]
+\glqq Satz: Sei $f:[a,b] \rightarrow \R$ beschränkt. Dann ist $f$ R-integrierbar genau dann, wenn es zu jedem $\varepsilon > 0$ eine Partition $Z$ gibt, 
+so dass
+$O_f(Z)  U_f(Z) < \varepsilon$. \grqq \cite{HM12}
+\newline
+Anmerkung: \glqq In der Mengenlehre ist eine Partition (auch Zerlegung oder Klasseneinteilung) einer Menge M eine Menge P, deren Elemente nichtleere Teilmengen von M sind, sodass jedes Element von M in genau einem Element von P enthalten ist. Anders gesagt: Eine Partition einer Menge ist eine Zerlegung dieser Menge in nichtleere paarweise disjunkte Teilmengen.\grqq  \cite{wiki}
+
+\end{description}
+
+\subsubsection{MWS der Integralrechnung}
+$f:[a,b]\rightarrow\R$ stetig, dann $\exists \; \xi \in[a,b]$ mit $\int_a^b f(x)dx = f(\xi)(b-a)$.
+
+\subsubsection{Hauptsatz der Differential- und Integralrechnung}
+$f:[a,b]\rightarrow\R$ stetig, dann ist $F(x) = \int_a^x f(t)dt$ diffbar und $F'(x) = f(x)$.
+
+\subsubsection{Anwendungen}
+\begin{description}
+\item[1)]
+\begin{align}
+\lim_{x\to 0} \frac{1}{x} \int_0^x e^{-cos(y^{17})} dy = \lim_{x\to 0}  \frac{\overbrace{\int_0^x e^{-cos(y^{17})}}^{\colBord{\rightarrow 0}}}{\underbrace{x}_{\colBord{\rightarrow 0}}} \nonumber\\
+\overset{\colBord{"\frac{0}{0}" \rightarrow L.H.}}{=}
+\lim_{x \to 0} \frac{e^{-cos(x^{17}}}{1} = e^{-1} = \frac{1}{e}
+\end{align}
+\item[2)]
+\begin{align}
+\lim_{x \to \infty} xe^{x^2} \int_0^x e^{y^2}dy 
+&= \lim_{x \to \infty} \frac{\overbrace{\int_0^x e^{y^2}dy}^{\colBord{\rightarrow \infty}}}
+{\underbrace{\frac{1}{x} e^{x^2}}_{\colBord{\rightarrow \infty}}} \nonumber\\
+\overset{\colBord{"\frac{\infty}{\infty}" \rightarrow L.H.}}{=}
+\lim_{x \to \infty} \frac{e^{x^2}}{-\frac{1}{x^2}* \colRed{\cancel{e^{x^2}}}
++ \frac{1}{x} 2x \colRed{\cancel{e^{x^2}}}} 
+&= \lim_{x \to \infty} \frac{1}{- \frac{1}{x^2} +2} = \frac{1}{2}
+\end{align}
+\end{description}
+
+\newpage
+\section{\underline{Anhänge}}
+\subsection{Formelverzeichnis}
+
+
+\bibliography{lit}
+
+\end{document}
